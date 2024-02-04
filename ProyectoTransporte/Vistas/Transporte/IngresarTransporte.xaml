@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.IngresarTransporte"
+             Title="IngresarTransporte">
+    <ScrollView>
+        <Grid BackgroundColor="White" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Registro de Transporte" FontAttributes="Bold" Margin="0,15,0,50" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Title" TextColor="#3498db" />
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Número de Matrícula:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="EntryMatricula" Placeholder="Ingrese el número de matrícula" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Marca:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="EntryMarca" Placeholder="Ingrese la marca" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Modelo:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="EntryModelo" Placeholder="Ingrese el modelo" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Tipo:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="EntryTipo" Placeholder="Ingrese el tipo" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Placa:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="4" Grid.Column="1" x:Name="EntryPlaca" Placeholder="Ingrese la placa" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Estado:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="5" Grid.Column="1" x:Name="EntryEstado" Placeholder="Ingrese el estado" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Observacion:" VerticalOptions="Center"  TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="6" Grid.Column="1" x:Name="EntryObservacion" Placeholder="Ingrese alguna observación" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="7" Grid.Column="0" Text="Transportista:" VerticalOptions="Center"  TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+
+                <Picker x:Name="TransportistaPicker" Grid.Row="7" Grid.Column="1" Title="Seleccione un transportista" Margin="10,0,0,0" BackgroundColor="#ecf0f1" >
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="nombre" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+            </Grid>
+            <Grid Grid.Row="2" ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAgregarTransporte" Grid.Row="0" Text="Guardar"
+                        Clicked="btnAgregarTransporte_Clicked" HorizontalOptions="Center" BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+                <Button x:Name="btnTransportes" Grid.Row="1" Text="Ver Transportes" Clicked="btnTransportes_Clicked" 
+                        BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

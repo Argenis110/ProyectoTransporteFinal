@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.listaFacturas"
+             Title="listaFacturas">
+    <VerticalStackLayout Spacing="20" Padding="25">
+        <Label 
+            Text="Lista de Facturas"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+
+        <Grid BackgroundColor="#3498db">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblIdFacturaHeader" Text="ID Factura" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+            <Label x:Name="lblNFacturaHeader" Text="Número de Factura" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+            <Label x:Name="lblClienteHeader" Text="Cliente" Grid.Row="0" Grid.Column="2" FontAttributes="Bold"/>
+            <Label x:Name="lblProductosHeader" Text="Productos" Grid.Row="0" Grid.Column="3" FontAttributes="Bold"/>
+            <Label x:Name="lblFechaHeader" Text="Fecha" Grid.Row="0" Grid.Column="4" FontAttributes="Bold"/>
+            <Label x:Name="lblTotalHeader" Text="Total" Grid.Row="0" Grid.Column="5" FontAttributes="Bold"/>
+
+        </Grid>
+
+        <ListView x:Name="listamosFacturas" ItemSelected="listaFacturas_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <ScrollView>
+                                <Grid HeightRequest="100" VerticalOptions="FillAndExpand" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblIdFactura" Text="{Binding idFactura}" Grid.Row="0" Grid.Column="0"/>
+                                    <Label x:Name="lblNFactura" Text="{Binding nFactura}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label x:Name="lblCliente" Text="{Binding cliente}" Grid.Row="0" Grid.Column="2"/>
+                                    <Label x:Name="lblProductos" Text="{Binding productos}" Grid.Row="0" Grid.Column="3"/>
+                                    <Label x:Name="lblFecha" Text="{Binding fecha}" Grid.Row="0" Grid.Column="4"/>
+                                    <Label x:Name="lblTotal" Text="{Binding total}" Grid.Row="0" Grid.Column="5"/>
+                                </Grid>
+                            </ScrollView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

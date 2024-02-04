@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.ListaTransportes"
+             Title="ListaTransportes">
+    <VerticalStackLayout Spacing="20" Padding="25">
+        <Label 
+            Text="Lista de Transportes"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+
+        <Grid BackgroundColor="#3498db">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblMatriculaHeader" Text="Matrícula" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+            <Label x:Name="lblMarcaHeader" Text="Marca" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+            <Label x:Name="lblModeloHeader" Text="Modelo" Grid.Row="0" Grid.Column="2" FontAttributes="Bold"/>
+            <Label x:Name="lblTipoHeader" Text="Tipo" Grid.Row="0" Grid.Column="3" FontAttributes="Bold"/>
+            <Label x:Name="lblPlacaHeader" Text="Placa" Grid.Row="0" Grid.Column="4" FontAttributes="Bold"/>
+            <Label x:Name="lblEstadoHeader" Text="Estado" Grid.Row="0" Grid.Column="5" FontAttributes="Bold"/>
+            <Label x:Name="lblObservacionHeader" Text="Observación" Grid.Row="0" Grid.Column="6" FontAttributes="Bold"/>
+            <Label x:Name="lblTransportistaHeader" Text="ID Transportista" Grid.Row="0" Grid.Column="7" FontAttributes="Bold"/>
+        </Grid>
+
+        <ListView x:Name="listaTransportes" ItemSelected="listaTransportes_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <ScrollView>
+                                <Grid HeightRequest="100" VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblMatricula" Text="{Binding nMatricula}  " Grid.Row="0" Grid.Column="0"/>
+                                    <Label x:Name="lblMarca" Text="{Binding marca}  " Grid.Row="0" Grid.Column="1"/>
+                                    <Label x:Name="lblModelo" Text="{Binding modelo}  " Grid.Row="0" Grid.Column="2"/>
+                                    <Label x:Name="lblTipo" Text="{Binding tipo}  " Grid.Row="0" Grid.Column="3"/>
+                                    <Label x:Name="lblPlaca" Text="{Binding placa}  " Grid.Row="0" Grid.Column="4"/>
+                                    <Label x:Name="lblEstado" Text="{Binding estado}  " Grid.Row="0" Grid.Column="5"/>
+                                    <Label x:Name="lblObservacion" Text="{Binding observacion}  " Grid.Row="0" Grid.Column="6"/>
+                                    <Label x:Name="lblTransportista" Text="{Binding fkTransportista}  " Grid.Row="0" Grid.Column="7"/>
+                                </Grid>
+                            </ScrollView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

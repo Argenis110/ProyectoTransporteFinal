@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.ListaConductores"
+             Title="ListaConductores">
+    <VerticalStackLayout Spacing="20" Padding="25">
+        <Label 
+            Text="Lista de Transportistas"
+            FontSize="Title" FontAttributes="Italic"
+            HorizontalTextAlignment="Center" TextColor="Black" />
+
+        <Grid BackgroundColor="#3498db" Margin="0,10,-15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblNombreHeader" Text="Nombre" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+            <Label x:Name="lblApellidoHeader" Text="Apellido" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" HorizontalTextAlignment="End" TextColor="Black" />
+
+            <Label x:Name="lblCedulaHeader" Text="Cédula" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+
+            <Label x:Name="lblTipoLicenciaHeader" Text="Tipo de Licencia" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+
+            <Label x:Name="lblTelefonoHeader" Text="Teléfono" Grid.Row="0" Grid.Column="4" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" />
+        </Grid>
+
+        <ListView x:Name="listaTransportistas" ItemSelected="listaTransportistas_ItemSelected"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="1,7"  Padding="10">
+                            <ScrollView>
+                        <Grid BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                                                       
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center"/>
+                                    <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center"/>
+                                    <Label x:Name="lblCedula" Text="{Binding cedula}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center"/>
+                                    <Label x:Name="lblTipoLicencia" Text="{Binding tipoLicencia}" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center"/>
+                                    <Label x:Name="lblTelefono" Text="{Binding telefono}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center"/>
+
+                            
+                        </Grid>
+                            </ScrollView>
+                        </StackLayout>
+                    </ViewCell>                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

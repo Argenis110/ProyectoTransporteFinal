@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.IngresarOrden"
+             Title="IngresarOrden">
+    <ScrollView>
+        <Grid BackgroundColor="White" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Registro de Orden" FontAttributes="Bold" Margin="0,15,0,50" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Title" TextColor="#3498db" />
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Número de Orden:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="EntryNOrden" Placeholder="Ingrese el número de orden" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Observación:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="EntryObservacion" Placeholder="Ingrese la observación" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Destino:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="EntryDestino" Placeholder="Ingrese el destino" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Fecha:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <DatePicker Grid.Row="3" Grid.Column="1" x:Name="DatePickerFecha" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Factura:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Picker x:Name="FacturaPicker" Grid.Row="4" Grid.Column="1" Title="Seleccione una factura" Margin="10,0,0,0" BackgroundColor="#ecf0f1" >
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="NumeroFactura" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Transportista:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Picker x:Name="TransportistaPicker" Grid.Row="5" Grid.Column="1" Title="Seleccione un transportista" Margin="10,0,0,0" BackgroundColor="#ecf0f1" >
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="nombre" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Usuario:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Picker x:Name="UsuarioPicker" Grid.Row="6" Grid.Column="1" Title="Seleccione un usuario" Margin="10,0,0,0" BackgroundColor="#ecf0f1" >
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="NombreUsuario" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+                <Label Grid.Row="7" Grid.Column="0" Text="Transporte:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+                <Picker x:Name="TransportePicker" Grid.Row="7" Grid.Column="1" Title="Seleccione un transporte" Margin="10,0,0,0" BackgroundColor="#ecf0f1" >
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="nMatricula" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+
+            </Grid>
+            <Grid Grid.Row="2" ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAgregarOrden" Grid.Row="0" Text="Guardar"
+                        Clicked="btnAgregarOrden_Clicked" HorizontalOptions="Center" BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+                <Button x:Name="btnVerOrdenes" Grid.Row="1" Text="Ver Órdenes" Clicked="btnVerOrdenes_Clicked" 
+                        BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

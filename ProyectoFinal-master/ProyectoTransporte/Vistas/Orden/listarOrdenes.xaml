@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.listarOrdenes"
+             Title="listar Ordenes">
+    <VerticalStackLayout Spacing="20" Padding="25">
+        <Label 
+        Text="Lista de Órdenes"
+        FontSize="Title"
+        HorizontalTextAlignment="Center"  TextColor="Black" FontAttributes="Italic"/>
+
+        <Grid BackgroundColor="#3498db" Margin="-0,10,-15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblNOrden" Text="N°Orden" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+            <Label x:Name="lblDestino" Text="Destino" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+            <Label x:Name="lblFecha" Text="Fecha" Grid.Row="0" Grid.Column="2" FontAttributes="Bold"/>
+            <Label x:Name="lblTransportista" Text="Transportista" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label x:Name="lblTransporte" Text="Transporte" Grid.Row="0" Grid.Column="4" FontAttributes="Bold"/>
+        </Grid>
+
+        <ListView x:Name="listamosOrdenes" ItemSelected="listamosOrdenes_ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="1,7"  Padding="10">
+                            <ScrollView>
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition ></RowDefinition>
+                                        
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblNOrden" Text="{Binding nOrden}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    <Label x:Name="lblDestino" Text="{Binding destino}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    <Label x:Name="lblFecha" Text="{Binding fecha}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    <Label x:Name="lblTransportista" Text="{Binding fkTransportista}" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    <Label x:Name="lblTransporte" Text="{Binding fkTransporte}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                </Grid>
+                            </ScrollView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

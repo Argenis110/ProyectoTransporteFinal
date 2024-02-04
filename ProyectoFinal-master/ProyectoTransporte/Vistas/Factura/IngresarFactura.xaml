@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTransporte.Vistas.IngresarFactura"
+             Title="IngresarFactura">
+    <ScrollView>
+        <Grid BackgroundColor="White" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Número de Factura:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+            <Entry Grid.Row="0" Grid.Column="1" x:Name="EntryNFactura" Placeholder="Ingrese el número de factura" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Cliente:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="EntryCliente" Placeholder="Ingrese el cliente" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Productos:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+            <Entry Grid.Row="2" Grid.Column="1" x:Name="EntryProductos" Placeholder="Ingrese los productos" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="Fecha:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+            <DatePicker Grid.Row="3" Grid.Column="1" x:Name="DatePickerFecha" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+            <Label Grid.Row="4" Grid.Column="0" Text="Total:" VerticalOptions="Center" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" Margin="10,0,0,0" />
+            <Entry Grid.Row="4" Grid.Column="1" x:Name="EntryTotal" Placeholder="Ingrese el total" Margin="10,0,0,0" BackgroundColor="#ecf0f1" />
+
+            <Grid Grid.Row="5" ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAgregarFactura" Grid.Row="0" Text="Guardar"
+                        Clicked="btnAgregarFactura_Clicked" HorizontalOptions="Center" BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+                <Button x:Name="btnVerFacturas" Grid.Row="1" Text="Ver Facturas" Clicked="btnVerFacturas_Clicked" 
+                        BackgroundColor="DarkBlue" TextColor="Yellow" BorderColor="Azure" Margin="20"></Button>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>
